@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VINTAGE SUITS | Luxury Hotel Reservations</title>
+<meta name="description" content="Discover exceptional hotels, luxury suites, and unforgettable stays with VINTAGE SUITS.">
+
+<!-- Open Graph Metadata -->
+<meta property="og:title" content="VINTAGE SUITS | Luxury Hotel Reservations">
+<meta property="og:description" content="Discover exceptional hotels, luxury suites, and unforgettable stays with VINTAGE SUITS.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80">
+
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FontAwesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+<header class="header" id="header">
+<nav class="nav-container">
+<a href="#" class="logo">VINTAGE SUITS</a>
+
+<ul class="nav-menu" id="nav-menu">
+<li><a href="#home" class="nav-link active">Home</a></li>
+<li><a href="#hotels" class="nav-link">Hotels</a></li>
+<li><a href="#destinations" class="nav-link">Destinations</a></li>
+<li><a href="#rooms" class="nav-link">Rooms & Suites</a></li>
+<li><a href="#about" class="nav-link">About Us</a></li>
+<li><a href="#reviews" class="nav-link">Reviews</a></li>
+<li><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
+
+<div class="nav-actions">
+<button class="btn btn-outline" id="my-booking-btn">My Booking</button>
+<a href="#booking-widget" class="btn btn-gold">Reserve Now</a>
+</div>
+
+<div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1 class="hero-title">STAY TIMELESS.<br>STAY WITH VINTAGE.</h1>
+<p class="hero-subtitle">Discover exceptional stays, unforgettable destinations, and effortless hotel reservations with VINTAGE SUITS.</p>
+<div class="hero-buttons">
+<a href="#hotels" class="btn btn-gold">Explore Hotels</a>
+<a href="#booking-widget" class="btn btn-outline-light">Reserve Your Stay</a>
+</div>
+</div>
+</section>
+
+<!-- HOTEL SEARCH / BOOKING WIDGET -->
+<section class="booking-widget-section" id="booking-widget">
+<div class="container">
+<form class="booking-form" id="hotel-search-form">
+<div class="form-group">
+<label for="destination"><i class="fa-solid fa-location-dot"></i> Destination</label>
+<select id="destination" required>
+<option value="" disabled selected>Select destination</option>
+<option value="Paris">Paris, France</option>
+<option value="Dubai">Dubai, UAE</option>
+<option value="London">London, UK</option>
+<option value="New York">New York, USA</option>
+<option value="Lagos">Lagos, Nigeria</option>
+<option value="Abuja">Abuja, Nigeria</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="check-in"><i class="fa-solid fa-calendar-days"></i> Check-in</label>
+<input type="date" id="check-in" required>
+</div>
+
+<div class="form-group">
+<label for="check-out"><i class="fa-solid fa-calendar-days"></i> Check-out</label>
+<input type="date" id="check-out" required>
+</div>
+
+<div class="form-group">
+<label for="guests"><i class="fa-solid fa-user-group"></i> Guests</label>
+<select id="guests" required>
+<option value="1">1 Guest</option>
+<option value="2" selected>2 Guests</option>
+<option value="3">3 Guests</option>
+<option value="4">4+ Guests</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="rooms-count"><i class="fa-solid fa-door-closed"></i> Rooms</label>
+<select id="rooms-count" required>
+<option value="1" selected>1 Room</option>
+<option value="2">2 Rooms</option>
+<option value="3">3+ Rooms</option>
+</select>
+</div>
+
+<button type="submit" class="btn btn-gold search-btn">SEARCH HOTELS</button>
+</form>
+</div>
+</section>
+
+<!-- FEATURED HOTELS -->
+<section class="section hotels-section" id="hotels">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">CURATED STAYS</span>
+<h2 class="section-title">Handpicked hotels for every kind of getaway.</h2>
+</div>
+
+<div class="hotels-grid" id="hotels-grid">
+<!-- Dynamically populated or rendered via JS data -->
+</div>
+
+<div class="no-results-message" id="no-results" style="display: none;">
+<p>No stays found for your search. Try another destination or date.</p>
+<button class="btn btn-outline" id="reset-search">View All Hotels</button>
+</div>
+</div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="section destinations-section" id="destinations">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">GLOBAL REACH</span>
+<h2 class="section-title">Iconic Destinations</h2>
+</div>
+
+<div class="destinations-grid">
+<div class="destination-card" data-dest="Paris">
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Paris" loading="lazy">
+<div class="destination-overlay">
+<h3>Paris</h3>
+<span class="explore-link">Explore Destination <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+<div class="destination-card" data-dest="Dubai">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai" loading="lazy">
+<div class="destination-overlay">
+<h3>Dubai</h3>
+<span class="explore-link">Explore Destination <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+<div class="destination-card" data-dest="London">
+<img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="London" loading="lazy">
+<div class="destination-overlay">
+<h3>London</h3>
+<span class="explore-link">Explore Destination <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+<div class="destination-card" data-dest="New York">
+<img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="New York" loading="lazy">
+<div class="destination-overlay">
+<h3>New York</h3>
+<span class="explore-link">Explore Destination <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+<div class="destination-card" data-dest="Lagos">
+<img src="https://images.unsplash.com/photo-1618828598155-46f903820257?auto=format&fit=crop&w=800&q=80" alt="Lagos" loading="lazy">
+<div class="destination-overlay">
+<h3>Lagos</h3>
+<span class="explore-link">Explore Destination <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+<div class="destination-card" data-dest="Abuja">
+<img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" alt="Abuja" loading="lazy">
+<div class="destination-overlay">
+<h3>Abuja</h3>
+<span class="explore-link">Explore Destination <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ROOMS & SUITES -->
+<section class="section rooms-section" id="rooms">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">ACCOMMODATIONS</span>
+<h2 class="section-title">Rooms & Suites</h2>
+</div>
+
+<div class="rooms-grid">
+<!-- Room Card 1 -->
+<div class="room-card">
+<div class="room-image">
+<img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Deluxe Room" loading="lazy">
+<span class="room-price">$380 <span>/ night</span></span>
+</div>
+<div class="room-content">
+<h3>Deluxe Room</h3>
+<p>Designed with understated luxury, featuring rich textures, custom furnishings, and courtyard views.</p>
+<div class="room-amenities">
+<span><i class="fa-solid fa-wifi"></i> Wi-Fi</span>
+<span><i class="fa-solid fa-bed"></i> King Bed</span>
+<span><i class="fa-solid fa-mug-hot"></i> Breakfast</span>
+<span><i class="fa-solid fa-snowflake"></i> AC</span>
+</div>
+<a href="#booking-widget" class="btn btn-outline full-width">View Suite</a>
+</div>
+</div>
+
+<!-- Room Card 2 -->
+<div class="room-card">
+<div class="room-image">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Executive Suite" loading="lazy">
+<span class="room-price">$620 <span>/ night</span></span>
+</div>
+<div class="room-content">
+<h3>Executive Suite</h3>
+<p>Spacious open-plan suite offering a separate lounge area, executive work desk, and luxury bath.</p>
+<div class="room-amenities">
+<span><i class="fa-solid fa-wifi"></i> Wi-Fi</span>
+<span><i class="fa-solid fa-bed"></i> King Bed</span>
+<span><i class="fa-solid fa-utensils"></i> Room Service</span>
+<span><i class="fa-solid fa-snowflake"></i> AC</span>
+</div>
+<a href="#booking-widget" class="btn btn-outline full-width">View Suite</a>
+</div>
+</div>
+
+<!-- Room Card 3 -->
+<div class="room-card">
+<div class="room-image">
+<img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80" alt="Presidential Suite" loading="lazy">
+<span class="room-price">$1,450 <span>/ night</span></span>
+</div>
+<div class="room-content">
+<h3>Presidential Suite</h3>
+<p>The pinnacle of elegance featuring panoramic city views, grand living spaces, and dedicated butler service.</p>
+<div class="room-amenities">
+<span><i class="fa-solid fa-wifi"></i> Wi-Fi</span>
+<span><i class="fa-solid fa-bed"></i> King Bed</span>
+<span><i class="fa-solid fa-mug-hot"></i> Breakfast</span>
+<span><i class="fa-solid fa-water-ladder"></i> Pool Access</span>
+</div>
+<a href="#booking-widget" class="btn btn-outline full-width">View Suite</a>
+</div>
+</div>
+
+<!-- Room Card 4 -->
+<div class="room-card">
+<div class="room-image">
+<img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" alt="Ocean View Suite" loading="lazy">
+<span class="room-price">$890 <span>/ night</span></span>
+</div>
+<div class="room-content">
+<h3>Ocean View Suite</h3>
+<p>Breathtaking floor-to-ceiling windows framing uninterrupted waterfront horizons and private balcony.</p>
+<div class="room-amenities">
+<span><i class="fa-solid fa-wifi"></i> Wi-Fi</span>
+<span><i class="fa-solid fa-bed"></i> King Bed</span>
+<span><i class="fa-solid fa-utensils"></i> Room Service</span>
+<span><i class="fa-solid fa-water-ladder"></i> Pool</span>
+</div>
+<a href="#booking-widget" class="btn btn-outline full-width">View Suite</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WHY VINTAGE SUITS -->
+<section class="section why-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">THE VINTAGE DIFFERENCE</span>
+<h2 class="section-title">Why Choose Vintage Suits</h2>
+</div>
+
+<div class="why-grid">
+<div class="why-card">
+<i class="fa-solid fa-gem"></i>
+<h3>Curated Hotels</h3>
+<p>Every property in our collection is rigorously evaluated for unmatched design, location, and service quality.</p>
+</div>
+<div class="why-card">
+<i class="fa-solid fa-medal"></i>
+<h3>Best Available Stays</h3>
+<p>Direct access to handpicked, world-class accommodations tailored to sophisticated traveler expectations.</p>
+</div>
+<div class="why-card">
+<i class="fa-solid fa-bolt"></i>
+<h3>Simple Reservations</h3>
+<p>An intuitive, frictionless booking experience designed to secure your preferred accommodation in seconds.</p>
+</div>
+<div class="why-card">
+<i class="fa-solid fa-headset"></i>
+<h3>Personal Support</h3>
+<p>Dedicated concierge assistance ready to curate and support your itinerary around the clock.</p>
+</div>
+<div class="why-card">
+<i class="fa-solid fa-shield-halved"></i>
+<h3>Secure Booking</h3>
+<p>Absolute peace of mind with enterprise-grade data protection and transparent reservation terms.</p>
+</div>
+<div class="why-card">
+<i class="fa-solid fa-star"></i>
+<h3>Exceptional Service</h3>
+<p>Commitment to flawless execution and personalized hospitality at every step of your journey.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT VINTAGE SUITS -->
+<section class="section about-section" id="about">
+<div class="container about-container">
+<div class="about-text">
+<span class="section-tag">OUR PHILOSOPHY</span>
+<h2 class="section-title">TRAVEL SHOULD FEEL TIMELESS.</h2>
+<p>At Vintage Suits, we believe that true luxury lies in thoughtful curation, absolute discretion, and environments that inspire. We assist discerning travelers in discovering and reserving carefully selected hotels and accommodations that honor local heritage while offering modern refinement.</p>
+<p>Whether you seek a secluded sanctuary by the coast or a sophisticated urban retreat, our portfolio represents the gold standard in hospitality.</p>
+<a href="#contact" class="btn btn-gold">Learn More About Us</a>
+</div>
+<div class="about-image">
+<img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80" alt="Luxury Interior" loading="lazy">
+</div>
+</div>
+</section>
+
+<!-- HOTEL AMENITIES -->
+<section class="section amenities-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">WORLD-CLASS FACILITIES</span>
+<h2 class="section-title">Hotel Amenities</h2>
+</div>
+
+<div class="amenities-grid">
+<div class="amenity-item">
+<i class="fa-solid fa-person-swimming"></i>
+<h4>Swimming Pools</h4>
+</div>
+<div class="amenity-item">
+<i class="fa-solid fa-dumbbell"></i>
+<h4>Fitness Centers</h4>
+</div>
+<div class="amenity-item">
+<i class="fa-solid fa-champagne-glasses"></i>
+<h4>Fine Dining</h4>
+</div>
+<div class="amenity-item">
+<i class="fa-solid fa-spa"></i>
+<h4>Spa & Wellness</h4>
+</div>
+<div class="amenity-item">
+<i class="fa-solid fa-wifi"></i>
+<h4>Complimentary Wi-Fi</h4>
+</div>
+<div class="amenity-item">
+<i class="fa-solid fa-concierge-bell"></i>
+<h4>Room Service</h4>
+</div>
+<div class="amenity-item">
+<i class="fa-solid fa-car"></i>
+<h4>Airport Transfers</h4>
+</div>
+<div class="amenity-item">
+<i class="fa-solid fa-briefcase"></i>
+<h4>Business Facilities</h4>
+</div>
+</div>
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section" id="reviews">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">TESTIMONIALS</span>
+<h2 class="section-title">WHAT OUR GUESTS SAY</h2>
+</div>
+
+<div class="slider-container">
+<div class="reviews-track" id="reviews-track">
+<!-- Sample/Demo Testimonials (Editable) -->
+<div class="review-card">
+<div class="review-stars">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+</div>
+<p class="review-text">“Vintage Suits made our anniversary trip to Paris completely seamless. The hotel recommendation exceeded all expectations.”</p>
+<div class="review-author">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Victoria Sterling">
+<div>
+<h4>Victoria Sterling</h4>
+<span>Verified Guest</span>
+</div>
+</div>
+</div>
+
+<div class="review-card">
+<div class="review-stars">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+</div>
+<p class="review-text">“The booking process was effortless, and the concierge support was world-class. I will never book luxury travel anywhere else.”</p>
+<div class="review-author">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Marcus Vance">
+<div>
+<h4>Marcus Vance</h4>
+<span>Verified Guest</span>
+</div>
+</div>
+</div>
+
+<div class="review-card">
+<div class="review-stars">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+</div>
+<p class="review-text">“An incredible portfolio of hotels. Every detail of our Dubai stay was handled with absolute professionalism and elegance.”</p>
+<div class="review-author">
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Elena Rostova">
+<div>
+<h4>Elena Rostova</h4>
+<span>Verified Guest</span>
+</div>
+</div>
+</div>
+
+<div class="review-card">
+<div class="review-stars">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+</div>
+<p class="review-text">“From London to New York, Vintage Suits consistently delivers top-tier accommodation choices. Truly unmatched service.”</p>
+<div class="review-author">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Julian Thorne">
+<div>
+<h4>Julian Thorne</h4>
+<span>Verified Guest</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="slider-controls">
+<button class="slider-btn" id="prev-review" aria-label="Previous Review"><i class="fa-solid fa-chevron-left"></i></button>
+<button class="slider-btn" id="next-review" aria-label="Next Review"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- HOW BOOKING WORKS -->
+<section class="section process-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">SIMPLICITY</span>
+<h2 class="section-title">How Booking Works</h2>
+</div>
+
+<div class="process-grid">
+<div class="process-card">
+<span class="process-num">01</span>
+<h3>Choose Your Destination</h3>
+<p>Select from our handpicked collection of world-class global cities and resort locations.</p>
+</div>
+<div class="process-card">
+<span class="process-num">02</span>
+<h3>Find Your Stay</h3>
+<p>Filter properties by preference, dates, and guest capacity to view tailored options.</p>
+</div>
+<div class="process-card">
+<span class="process-num">03</span>
+<h3>Confirm Your Reservation</h3>
+<p>Secure your preferred suite instantly through our encrypted, transparent checkout flow.</p>
+</div>
+<div class="process-card">
+<span class="process-num">04</span>
+<h3>Enjoy Your Stay</h3>
+<p>Arrive to bespoke hospitality, dedicated concierge care, and unforgettable ambiance.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- RESERVATION CTA -->
+<section class="cta-section">
+<div class="container cta-container">
+<h2>READY TO BOOK YOUR NEXT STAY?</h2>
+<p>Let VINTAGE SUITS help you find the perfect place to stay.</p>
+<div class="cta-buttons">
+<a href="#booking-widget" class="btn btn-gold">RESERVE NOW</a>
+<a href="tel:+12135362268" class="btn btn-outline-light">CALL +1 (213) 536-2268</a>
+</div>
+</div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section contact-section" id="contact">
+<div class="container contact-container">
+<div class="contact-info">
+<span class="section-tag">GET IN TOUCH</span>
+<h2>VINTAGE SUITS</h2>
+<p>Our reservation specialists are available around the clock to assist with custom itineraries, private bookings, and inquiries.</p>
+
+<div class="contact-details">
+<div class="contact-item">
+<i class="fa-solid fa-phone"></i>
+<div>
+<span>Reservations</span>
+<a href="tel:+12135362268">+1 (213) 536-2268</a>
+</div>
+</div>
+<div class="contact-item">
+<i class="fa-solid fa-envelope"></i>
+<div>
+<span>Concierge Email</span>
+<a href="mailto:concierge@vintagesuits.com">concierge@vintagesuits.com</a>
+</div>
+</div>
+</div>
+</div>
+
+<!--
+Note for integration: You can connect this form directly to Netlify Forms
+by adding netlify attribute to the form tag: <form class="contact-form" id="contact-form" name="contact" netlify>
+-->
+<form class="contact-form" id="contact-form">
+<div class="form-group-contact">
+<label for="contact-name">Full Name</label>
+<input type="text" id="contact-name" placeholder="John Doe" required>
+</div>
+<div class="form-group-contact">
+<label for="contact-email">Email Address</label>
+<input type="email" id="contact-email" placeholder="john@example.com" required>
+</div>
+<div class="form-group-contact">
+<label for="contact-phone">Phone Number</label>
+<input type="tel" id="contact-phone" placeholder="+1 (555) 000-0000" required>
+</div>
+<div class="form-group-contact">
+<label for="contact-message">Message</label>
+<textarea id="contact-message" rows="4" placeholder="How may we assist your travel plans?" required></textarea>
+</div>
+<button type="submit" class="btn btn-gold full-width">SEND MESSAGE</button>
+<div class="form-success-msg" id="form-success" style="display: none;">
+Thank you. Your message has been received.
+</div>
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container footer-container">
+<div class="footer-col">
+<a href="#" class="logo">VINTAGE SUITS</a>
+<p class="footer-tagline">“Stay Timeless. Stay with Vintage.”</p>
+</div>
+<div class="footer-col">
+<h4>Navigation</h4>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#hotels">Hotels</a></li>
+<li><a href="#destinations">Destinations</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Reservations</h4>
+<p><a href="tel:+12135362268">+1 (213) 536-2268</a></p>
+<div class="social-links">
+<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 VINTAGE SUITS. All rights reserved.</p>
+</div>
+</footer>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- JavaScript File -->
+<script src="script.js"></script>
+</body>
+</html>
